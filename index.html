@@ -71,9 +71,9 @@
       }
 
       :is(#yuvamayalp) h1 {
-        font-size: 27px;
+        font-size: 26px;
         font-weight: 700;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
         color: var(--lp-red);
       }
       /*       :is(#yuvamayalp) h1::before {
@@ -331,8 +331,8 @@
 
       :is(#yuvamayalp) .aciklama {
         display: grid;
-        grid-template-columns: 2fr 1fr;
-        grid-gap: 10px;
+        grid-template-columns: 1.84fr 1fr;
+        grid-gap: 40px;
       }
       @media screen and (max-width: 768px) {
         :is(#yuvamayalp) .hero-section {
@@ -437,6 +437,10 @@
           column-gap: 3px;
         }
 
+        :is(#yuvamayalp) .lpcontentcontainer {
+          margin-top: -50px;
+        }
+
         :is(#yuvamayalp) .hero-section__description {
           grid-gap: 20px;
         }
@@ -521,7 +525,12 @@
             class="lpimg mobile-only"
             src="mobil-paket.png"
             alt="kolay hamur pakedi"
-            style="margin-top: -9vw; max-width: 43%; margin-inline: auto"
+            style="
+              margin-top: -9vw;
+              max-width: 43%;
+              margin-inline: auto;
+              display: none;
+            "
           />
           <div class="aciklama">
             <div class="hero-aciklama">
