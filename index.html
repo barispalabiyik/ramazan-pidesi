@@ -13,6 +13,7 @@
       }
       :root {
         --lp-red: #cc0000;
+        --light-red: #be1e1e;
       }
 
       ::-webkit-scrollbar {
@@ -46,8 +47,10 @@
         font-family: "LpFont", sans-serif;
         color: #333;
         background-color: #fff;
+        position: relative;
         margin: 0px;
         padding: 0px;
+        padding-top: 44px;
         box-sizing: border-box;
         min-height: 100vh;
         -webkit-font-smoothing: antialiased;
@@ -61,7 +64,7 @@
       }
 
       :is(#yuvamayalp) h1 {
-        font-size: 2.3vw;
+        font-size: 34px;
         font-weight: 700;
         margin-block: 20px;
         color: var(--lp-red);
@@ -75,7 +78,7 @@
       }
 
       h3 {
-        font-size: 1.5vw;
+        font-size: 30px;
         font-weight: 700;
         margin-bottom: 20px;
         text-align: center;
@@ -91,7 +94,7 @@
 
       .tarif {
         display: grid;
-        grid-template-columns: 1.5fr 4fr;
+        grid-template-columns: 1.7fr 4fr;
         grid-gap: 15px;
       }
       .tarif > div {
@@ -122,7 +125,7 @@
         padding: 5px 0;
         color: #ffffff;
         font-weight: 600;
-        border-bottom: 2px solid white;
+        border-bottom: 1px dashed white;
       }
 
       /*   .tarif ul li:nth-child(odd) {
@@ -138,13 +141,26 @@
       }
 
       .malzemeler {
-        background: #bd3232;
+        background: var(--light-red);
         color: #fff;
+        background-image: url("https://www.transparenttextures.com/patterns/subtle-carbon.png");
+      }
+
+      .malzemeler h4,
+      .malzemeler h3 {
+        background-color: #fff;
+        color: var(--lp-red);
+        padding: 10px;
+        border-radius: 10px;
+      }
+
+      .yapilis {
+        background-image: url("https://www.transparenttextures.com/patterns/swirl.png");
       }
 
       .yapilis ol {
         list-style: decimal;
-        padding: 0;
+        padding: 10px;
         margin: 0;
         text-align: left;
       }
@@ -154,7 +170,11 @@
         font-weight: 600;
         border-bottom: 2px solid rgb(201, 201, 201);
         list-style: decimal;
-        margin: 0 0 0 2em;
+        margin: 10px;
+      }
+
+      .yapilis h3 {
+        color: var(--lp-red);
       }
 
       :is(#yuvamayalp) h2 {
@@ -385,6 +405,28 @@
         justify-content: center;
         column-gap: 2px;
       }
+
+      :is(#yuvamayalp) p.not {
+        color: #999;
+        text-align: center;
+        margin-top: 10px;
+        font-weight: 700;
+      }
+
+      .reklam-banner {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--light-red);
+        text-align: center;
+        color: white;
+        padding-block: 10px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: large;
+        background-image: url("https://www.transparenttextures.com/patterns/wavecut.png");
+      }
     </style>
     <script>
       (function (w, d, s, l, i) {
@@ -436,12 +478,12 @@
             <h3>Malzemeler</h3>
             <ul>
               <li>4.5 su bardağı un / 500 gr</li>
-              <li>1 paket Yuva Instant Kuru Maya</li>
-              <li>1 su bardağı su</li>
-              <li>1 su bardağı süt</li>
-              <li>1 yemek kaşığı şeker</li>
-              <li>2 çay kaşığı tuz</li>
-              <li>1 su bardağı kepek</li>
+              <li>2.5 su bardağı su / 250 gr</li>
+              <li>1 tatlı kaşığı tuz / 10 gr</li>
+              <li>0.5 çay bardağı sıvı yağ / 10 gr</li>
+              <li>1 çay bardağı süt / 100 gr</li>
+              <li>1 paket Yuva Ekşi Maya</li>
+              <li>1 paket Yuva Kolay Hamur Aç / 35 gr</li>
             </ul>
           </div>
           <div>
@@ -455,7 +497,7 @@
           <div>
             <h4>Üstü için</h4>
             <ul>
-              <li>Çörekotu 2 yemek kaşığı / 20gr</li>
+              <li>2 yemek kaşığı çörekotu / 20gr</li>
             </ul>
           </div>
         </div>
@@ -467,32 +509,28 @@
               Hamur'u karıştırın. Homojen, yumuşak bir hamur elde edene kadar
               yoğurun.
             </li>
+            <li>Üzerini streçle kapatarak, yaklaşık 45 dk. mayalandırın.</li>
             <li>
-              Un, ılık su, tuz, sıvı yağ, ılık süt, Yuva Ekşi Maya ve Yuva Kolay
-              Hamur'u karıştırın. Homojen, yumuşak bir hamur elde edene kadar
-              yoğurun.
+              Hamuru unlanmış tezgaha alın. Hafifçe yoğurup havasini cikartin.
+              Dilediğiniz gibi 2 veya 3 eşit parçaya bölün, yuvarlayın, 15 dk
+              dinlendirin.
             </li>
             <li>
-              Un, ılık su, tuz, sıvı yağ, ılık süt, Yuva Ekşi Maya ve Yuva Kolay
-              Hamur'u karıştırın. Homojen, yumuşak bir hamur elde edene kadar
-              yoğurun.
+              Bulamaç için, yumurta sarisi, yogurt ve sıvı yağ karistirin.
             </li>
             <li>
-              Un, ılık su, tuz, sıvı yağ, ılık süt, Yuva Ekşi Maya ve Yuva Kolay
-              Hamur'u karıştırın. Homojen, yumuşak bir hamur elde edene kadar
-              yoğurun.
+              Bulamaç yardımıyla hamurları pide büyüklüğünde açın. Orta kısımdan
+              dış yüzeye doğru parmak uçlarınız ile bastırın. Aynı işlemi kare
+              kare olacak sekilde tüm yüzeye uygulayın ve tepside 15 dk
+              dinlendirin.
             </li>
             <li>
-              Un, ılık su, tuz, sıvı yağ, ılık süt, Yuva Ekşi Maya ve Yuva Kolay
-              Hamur'u karıştırın. Homojen, yumuşak bir hamur elde edene kadar
-              yoğurun.
+              Pidelerin üzerine sürün. Çörek otu, dilerseniz susam serpin.
             </li>
-            <li>
-              Un, ılık su, tuz, sıvı yağ, ılık süt, Yuva Ekşi Maya ve Yuva Kolay
-              Hamur'u karıştırın. Homojen, yumuşak bir hamur elde edene kadar
-              yoğurun.
-            </li>
+            <li>Önceden 230 C'de ısıtılmış fırında yaklaşık 10 dk pişirin.</li>
+            <li>Afiyet olsun.</li>
           </ol>
+          <p class="not">Not : Ölçüler silme ölçülerdir.</p>
         </div>
       </div>
       <div class="comments-container">
@@ -504,5 +542,8 @@
         ></div>
       </div>
     </div>
+    <a href="#" class="reklam-banner">
+      👉 Çekilişe Katıl: Tarifini paylaş, market çeki kazan! 👈
+    </a>
   </body>
 </html>
