@@ -98,15 +98,11 @@
 
       :is(#yuvamayalp) h4 {
         font-weight: 700;
-        margin-block: 20px;
-        text-align: center;
       }
 
       h3 {
         font-size: 30px;
         font-weight: 700;
-        margin-bottom: 20px;
-        text-align: center;
       }
 
       .comments-container {
@@ -155,7 +151,6 @@
 
       .tarif ul li {
         padding: 5px 0;
-        color: black;
         font-weight: 500;
         border-bottom: 1px dashed black;
       }
@@ -166,21 +161,22 @@
 
       .tarif ul li::before {
         content: "›";
-        color: black;
         display: inline-block;
         width: 1em;
         margin-left: 4px;
       }
 
       .malzemeler {
-        color: black;
         background-image: url("https://www.transparenttextures.com/patterns/subtle-carbon.png");
+      }
+
+      .responsive-align {
+        text-align: left;
       }
 
       .malzemeler h4,
       .malzemeler h3 {
-        background-color: var(--light-red);
-        color: white;
+        color: var(--lp-red);
         padding: 10px;
         border-radius: 10px;
       }
@@ -323,7 +319,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        background-color: var(--light-red);
+        background-color: var(--lp-red);
         text-align: center;
         color: white;
         padding-block: 10px;
@@ -347,6 +343,9 @@
         }
         :is(#yuvamayalp) .aciklama {
           grid-template-columns: 1fr;
+        }
+        .responsive-align {
+          text-align: center;
         }
 
         :is(#yuvamayalp) .kolay-hamur {
@@ -471,8 +470,7 @@
       :is(#yuvamayalp) p.not {
         color: #999;
         text-align: center;
-        margin-top: 10px;
-        font-weight: 700;
+        font-weight: 500;
       }
     </style>
     <script>
@@ -497,7 +495,6 @@
         style="display: none; visibility: hidden"
       ></iframe
     ></noscript>
-    <img class="logo desktop-only" src="logo-yuva.png" alt="yuvamaya logo" />
     <div class="lpcontainer">
       <img
         class="hero-image desktop-only"
@@ -524,17 +521,34 @@
             class="lpimg mobile-only"
             src="mobil-paket.png"
             alt="kolay hamur pakedi"
-            style="margin-top: -9vw; max-width: 80%; margin-inline: auto"
+            style="margin-top: -9vw; max-width: 43%; margin-inline: auto"
           />
           <div class="aciklama">
             <div class="hero-aciklama">
               <h1>Yuva Kolay Hamur ile Ramazan Pidesi Tarifi</h1>
               <p>
                 Yuva Kolay Hamur ile ister mayalı ister mayasız tüm hamur işi
-                tariflerinizi çok daha pratik ve daha kısa sürede hazırlayın!
+                tariflerinizi çok daha pratik ve kısa sürede hazırlayın! <br />
+                <br />
                 Yuva Kolay Hamur sayesinde hamurunuzun yoğurma ve dinlenme
                 süresi kısa olur. Hamurunuz yırtılmadan kolayca açılıp, çabucak
                 hazır olur.
+                <br />
+                <br />
+              </p>
+              <p style="padding-right: 5px; width: 100%">
+                <b>Kullanım Şekli:</b> 500 g una, 1 paket (35g) Yuva Kolay
+                Hamur’u katın. Ürünün kabartma özelliği yoktur.
+              </p>
+              <p style="padding-right: 5px; width: 100%">
+                <br />
+                <b>İçindekiler:</b> Buğday unu, deaktif kuru maya (saccharomyces
+                cerevisiae).
+              </p>
+
+              <p style="color: var(--lp-red)">
+                <br />
+                Mayalı hamur işleri yapımında ilave maya eklenmelidir.
               </p>
             </div>
             <div class="reklamlar"></div>
@@ -544,7 +558,7 @@
       <div class="tarif">
         <div class="malzemeler">
           <div>
-            <h3>Malzemeler</h3>
+            <h3 class="responsive-align">Malzemeler</h3>
             <ul>
               <li>4.5 su bardağı un / 500 gr</li>
               <li>2.5 su bardağı su / 250 gr</li>
@@ -556,7 +570,7 @@
             </ul>
           </div>
           <div>
-            <h4>Bulamaç için</h4>
+            <h4 class="responsive-align">Bulamaç için</h4>
             <ul>
               <li>1 adet yumurta sarısı</li>
               <li>2 yemek kaşığı yoğurt / 20 gr</li>
@@ -564,14 +578,14 @@
             </ul>
           </div>
           <div>
-            <h4>Üstü için</h4>
+            <h4 class="responsive-align">Üstü için</h4>
             <ul>
               <li>2 yemek kaşığı çörekotu / 20gr</li>
             </ul>
           </div>
         </div>
         <div class="yapilis">
-          <h3>Yapılışı</h3>
+          <h3 class="responsive-align">Yapılışı</h3>
           <ol>
             <li>
               Un, ılık su, tuz, sıvı yağ, ılık süt, Yuva Ekşi Maya ve Yuva Kolay
