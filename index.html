@@ -71,11 +71,10 @@
       }
 
       :is(#yuvamayalp) h1 {
-        font-size: 34px;
+        font-size: 24px;
         font-weight: 700;
         margin-block: 40px;
         color: var(--lp-red);
-        text-align: center;
       }
       /*       :is(#yuvamayalp) h1::before {
         content: "ꟷ";
@@ -116,17 +115,25 @@
 
       .tarif {
         display: grid;
-        grid-template-columns: 1.7fr 4fr;
+        grid-template-columns: 1.5fr 1fr 1fr;
         grid-gap: 15px;
       }
-      .tarif > div {
+
+      .yapilis,
+      .malzemeler {
         border-radius: 10px;
         border: 1px solid var(--lp-red);
         text-align: center;
         padding: 20px;
       }
 
-      .tarif ul {
+      .malzemeler {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 15px;
+      }
+
+      .kullanim ul {
         list-style: none;
         padding: 0;
         margin: 0;
@@ -134,16 +141,16 @@
       }
 
       @media (max-width: 768px) {
-        .tarif {
+        .kullanim {
           grid-template-columns: 1fr;
         }
 
-        .tarif ul {
+        .kullanim ul {
           text-align: center;
         }
       }
 
-      .tarif ul li {
+      .kullanim ul li {
         padding: 5px 0;
         color: black;
         font-weight: 600;
@@ -154,7 +161,7 @@
         background: rgb(230, 230, 230);
       } */
 
-      .tarif ul li::before {
+      .kullanim ul li::before {
         content: "›";
         color: black;
         display: inline-block;
@@ -162,7 +169,7 @@
         margin-left: 4px;
       }
 
-      .malzemeler {
+      .kullanim {
         color: black;
         background-image: url("https://www.transparenttextures.com/patterns/subtle-carbon.png");
       }
@@ -241,20 +248,15 @@
         padding-left: 15px;
         margin-right: auto;
         margin-left: auto;
-        max-width: 1250px;
+        max-width: 1050px;
       }
 
-      :is(#yuvamayalp) .hero-section {
-        grid-template-columns: 3.2fr 1fr;
-        grid-gap: 15px;
-        position: relative;
-      }
       :is(#yuvamayalp) .lpimg {
         width: 100%;
       }
       :is(#yuvamayalp) .hero-section__description {
         display: grid;
-        grid-template-columns: 1.5fr 4fr;
+        grid-template-columns: 1fr 2fr;
       }
       :is(#yuvamayalp) .icon-ici {
         display: flex;
@@ -323,16 +325,35 @@
         background-image: url("https://www.transparenttextures.com/patterns/wavecut.png");
       }
 
+      .tarif-section {
+        display: grid;
+        grid-template-columns: 2.5fr 1fr;
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+
       @media screen and (max-width: 768px) {
         :is(#yuvamayalp) .hero-section {
+          grid-template-columns: 1fr;
+        }
+
+        .tarif-section {
+          display: grid;
           grid-template-columns: 1fr;
         }
         :is(#yuvamayalp) .hero-section__description {
           grid-template-columns: 1fr;
         }
+
+        .malzemeler {
+          grid-template-columns: 1fr;
+        }
         :is(#yuvamayalp) .kolay-hamur {
           max-width: 150px;
           margin-inline: auto;
+        }
+        :is(#yuvamayalp) h1 {
+          text-align: center;
         }
 
         .reklam-banner {
@@ -435,9 +456,9 @@
       }
 
       :is(#yuvamayalp) .kullanim {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
       }
 
       :is(#yuvamayalp) .mobile-icons {
@@ -451,6 +472,14 @@
         text-align: center;
         margin-top: 10px;
         font-weight: 700;
+      }
+
+      .reklam-section {
+        background: rgb(122, 17, 17);
+        margin: 10px 5px 10px 5px;
+        color: white;
+        display: grid;
+        place-content: center;
       }
     </style>
     <script>
@@ -490,36 +519,66 @@
     </div>
 
     <div class="lpcontentcontainer">
-      <h1>Yuva Kolay Hamur ile Ramazan Pidesi Tarifi</h1>
-      <div class="tarif">
-        <div class="malzemeler">
-          <div>
-            <h3>Malzemeler</h3>
-            <ul>
-              <li>4.5 su bardağı un / 500 gr</li>
-              <li>2.5 su bardağı su / 250 gr</li>
-              <li>1 tatlı kaşığı tuz / 10 gr</li>
-              <li>0.5 çay bardağı sıvı yağ / 10 gr</li>
-              <li>1 çay bardağı süt / 100 gr</li>
-              <li>1 paket Yuva Ekşi Maya</li>
-              <li>1 paket Yuva Kolay Hamur Aç / 35 gr</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Bulamaç için</h4>
-            <ul>
-              <li>1 adet yumurta sarısı</li>
-              <li>2 yemek kaşığı yoğurt / 20 gr</li>
-              <li>3 yemek kaşığı sıvı yağ / 30 gr</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Üstü için</h4>
-            <ul>
-              <li>2 yemek kaşığı çörekotu / 20gr</li>
-            </ul>
+      <div class="hero-section">
+        <div class="hero-section__description">
+          <img
+            class="lpimg kolay-hamur desktop-only"
+            src="kolay.png"
+            alt="kolay hamur pakedi"
+          />
+
+          <img
+            class="lpimg mobile-only"
+            src="mobil-paket.png"
+            alt="kolay hamur pakedi"
+            style="margin-top: -9vw; max-width: 80%; margin-inline: auto"
+          />
+          <div class="icerik">
+            <h1
+              class="hero-header"
+              style="
+                color: var(--lp-red);
+                margin: 0;
+                font-family: 'LpFontBold', Arial, Helvetica, sans-serif;
+              "
+            >
+              Yuva Kolay Hamur ile Ramazan Pidesi Tarifi
+            </h1>
+
+            <div class="kullanim">
+              <div class="malzemeler">
+                <div>
+                  <h3>Malzemeler</h3>
+
+                  <ul>
+                    <li>4.5 su bardağı un / 500 gr</li>
+                    <li>2.5 su bardağı su / 250 gr</li>
+                    <li>1 tatlı kaşığı tuz / 10 gr</li>
+                    <li>0.5 çay bardağı sıvı yağ / 10 gr</li>
+                    <li>1 çay bardağı süt / 100 gr</li>
+                    <li>1 paket Yuva Ekşi Maya</li>
+                    <li>1 paket Yuva Kolay Hamur Aç / 35 gr</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 style="margin-top: 0px">Üstü için</h4>
+                  <ul>
+                    <li>2 yemek kaşığı çörekotu / 20gr</li>
+                  </ul>
+                  <h4>Bulamaç için</h4>
+                  <ul>
+                    <li>1 adet yumurta sarısı</li>
+                    <li>2 yemek kaşığı yoğurt / 20 gr</li>
+                    <li>3 yemek kaşığı sıvı yağ / 30 gr</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+      <div class="tarif-section">
         <div class="yapilis">
           <h3>Yapılışı</h3>
           <ol>
@@ -551,7 +610,11 @@
           </ol>
           <p class="not">Not : Ölçüler silme ölçülerdir.</p>
         </div>
+        <div class="reklam-section">
+          <p>Reklam Banner</p>
+        </div>
       </div>
+
       <div class="comments-container" style="display: none">
         <div id="fb-root"></div>
         <h3>Yorumlar</h3>
