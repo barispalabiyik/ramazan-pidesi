@@ -20,7 +20,7 @@
         padding: 0;
       }
       :root {
-        --lp-red: #cc0000;
+        --lp-red: #da291c;
         --light-red: #be1e1e;
       }
 
@@ -56,9 +56,8 @@
         color: #333;
         background-color: #fff;
         position: relative;
-        margin: 0px;
-        padding: 0px;
-        padding-top: 44px;
+        margin: 44px 0px 0px 0px;
+        padding: 0px 0px 50px 0px;
         box-sizing: border-box;
         min-height: 100vh;
         -webkit-font-smoothing: antialiased;
@@ -107,7 +106,7 @@
       }
       .tarif > div {
         border-radius: 10px;
-        border: 1px solid #ccc;
+        border: 1px solid var(--lp-red);
         text-align: center;
         padding: 20px;
       }
@@ -131,9 +130,9 @@
 
       .tarif ul li {
         padding: 5px 0;
-        color: #ffffff;
+        color: black;
         font-weight: 600;
-        border-bottom: 1px dashed white;
+        border-bottom: 1px dashed black;
       }
 
       /*   .tarif ul li:nth-child(odd) {
@@ -142,22 +141,21 @@
 
       .tarif ul li::before {
         content: "›";
-        color: white;
+        color: black;
         display: inline-block;
         width: 1em;
         margin-left: 4px;
       }
 
       .malzemeler {
-        background: var(--light-red);
-        color: #fff;
+        color: black;
         background-image: url("https://www.transparenttextures.com/patterns/subtle-carbon.png");
       }
 
       .malzemeler h4,
       .malzemeler h3 {
-        background-color: #fff;
-        color: var(--lp-red);
+        background-color: var(--light-red);
+        color: white;
         padding: 10px;
         border-radius: 10px;
       }
@@ -295,6 +293,21 @@
         border-radius: 5px;
       }
 
+      .reklam-banner {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--light-red);
+        text-align: center;
+        color: white;
+        padding-block: 10px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: large;
+        background-image: url("https://www.transparenttextures.com/patterns/wavecut.png");
+      }
+
       @media screen and (max-width: 768px) {
         :is(#yuvamayalp) .hero-section {
           grid-template-columns: 1fr;
@@ -305,6 +318,10 @@
         :is(#yuvamayalp) .kolay-hamur {
           max-width: 150px;
           margin-inline: auto;
+        }
+
+        .reklam-banner {
+          font-size: 12px;
         }
 
         :is(#yuvamayalp) .kampanya-gorsel {
@@ -420,21 +437,6 @@
         margin-top: 10px;
         font-weight: 700;
       }
-
-      .reklam-banner {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: var(--light-red);
-        text-align: center;
-        color: white;
-        padding-block: 10px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: large;
-        background-image: url("https://www.transparenttextures.com/patterns/wavecut.png");
-      }
     </style>
     <script>
       (function (w, d, s, l, i) {
@@ -534,7 +536,7 @@
           <p class="not">Not : Ölçüler silme ölçülerdir.</p>
         </div>
       </div>
-      <div class="comments-container">
+      <div class="comments-container" style="display: none">
         <div id="fb-root"></div>
         <h3>Yorumlar</h3>
         <div
