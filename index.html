@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yuva Kolay Hamur</title>
     <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
       :root {
         --lp-red: #cc0000;
       }
@@ -45,6 +50,10 @@
         padding: 0px;
         box-sizing: border-box;
         min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
       }
       :is(#yuvamayalp) p {
         font-size: 17px;
@@ -52,10 +61,23 @@
       }
 
       :is(#yuvamayalp) h1 {
-        font-size: 3vw;
+        font-size: 2.3vw;
+        font-weight: 700;
+        margin-block: 20px;
+        color: var(--lp-red);
+        text-align: center;
+      }
+
+      :is(#yuvamayalp) h4 {
+        font-weight: 700;
+        margin-block: 20px;
+        text-align: center;
+      }
+
+      h3 {
+        font-size: 1.5vw;
         font-weight: 700;
         margin-bottom: 20px;
-        color: var(--lp-red);
         text-align: center;
       }
 
@@ -67,33 +89,72 @@
         margin-top: 20px;
       }
 
-      .malzemeler {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: lightgray;
-        padding: 2vw;
+      .tarif {
+        display: grid;
+        grid-template-columns: 1.5fr 4fr;
+        grid-gap: 15px;
+      }
+      .tarif > div {
         border-radius: 10px;
-        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        border: 1px solid #ccc;
+        text-align: center;
+        padding: 20px;
       }
 
-      .malzemeler > ul {
+      .tarif ul {
         list-style: none;
         padding: 0;
         margin: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        text-align: left;
       }
 
-      .malzemeler > ul > li {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 10px;
+      @media (max-width: 768px) {
+        .tarif {
+          grid-template-columns: 1fr;
+        }
+
+        .tarif ul {
+          text-align: center;
+        }
+      }
+
+      .tarif ul li {
+        padding: 5px 0;
+        color: #ffffff;
+        font-weight: 600;
+        border-bottom: 2px solid white;
+      }
+
+      /*   .tarif ul li:nth-child(odd) {
+        background: rgb(230, 230, 230);
+      } */
+
+      .tarif ul li::before {
+        content: "›";
+        color: white;
+        display: inline-block;
+        width: 1em;
+        margin-left: 4px;
+      }
+
+      .malzemeler {
+        background: #bd3232;
+        color: #fff;
+      }
+
+      .yapilis ol {
+        list-style: decimal;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+      }
+
+      .yapilis li {
+        padding: 5px 0;
+        font-weight: 600;
+        border-bottom: 2px solid rgb(201, 201, 201);
+        list-style: decimal;
+        margin: 0 0 0 2em;
       }
 
       :is(#yuvamayalp) h2 {
@@ -369,54 +430,70 @@
       nonce="N1RkHSsU"
     ></script>
     <div class="lpcontentcontainer">
-      <h1>KOLAY HAMUR'LA RAMAZAN PİDESİ TARİFİ</h1>
-      <div class="malzemeler">
-        <h2>Malzemeler</h2>
-        <ul>
-          <li>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum,
-            itaque!
-          </li>
-          <li>
-            Suscipit, amet illum alias nihil consequatur minima velit magnam
-            iure.
-          </li>
-          <li>
-            Minima molestias porro aperiam nemo eos nostrum laboriosam? Rerum,
-            id!
-          </li>
-          <li>
-            Nulla aspernatur quibusdam blanditiis asperiores eos alias corporis
-            eligendi suscipit?
-          </li>
-          <li>
-            Ipsum nisi dolorem repellendus qui? Tempora aliquam asperiores
-            itaque cum.
-          </li>
-        </ul>
-        <h3>Üstü için</h3>
-        <ul>
-          <li>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum,
-            itaque!
-          </li>
-          <li>
-            Suscipit, amet illum alias nihil consequatur minima velit magnam
-            iure.
-          </li>
-          <li>
-            Minima molestias porro aperiam nemo eos nostrum laboriosam? Rerum,
-            id!
-          </li>
-          <li>
-            Nulla aspernatur quibusdam blanditiis asperiores eos alias corporis
-            eligendi suscipit?
-          </li>
-          <li>
-            Ipsum nisi dolorem repellendus qui? Tempora aliquam asperiores
-            itaque cum.
-          </li>
-        </ul>
+      <div class="tarif">
+        <div class="malzemeler">
+          <div>
+            <h3>Malzemeler</h3>
+            <ul>
+              <li>4.5 su bardağı un / 500 gr</li>
+              <li>1 paket Yuva Instant Kuru Maya</li>
+              <li>1 su bardağı su</li>
+              <li>1 su bardağı süt</li>
+              <li>1 yemek kaşığı şeker</li>
+              <li>2 çay kaşığı tuz</li>
+              <li>1 su bardağı kepek</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Bulamaç için</h4>
+            <ul>
+              <li>1 adet yumurta sarısı</li>
+              <li>2 yemek kaşığı yoğurt / 20 gr</li>
+              <li>3 yemek kaşığı sıvı yağ / 30 gr</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Üstü için</h4>
+            <ul>
+              <li>Çörekotu 2 yemek kaşığı / 20gr</li>
+            </ul>
+          </div>
+        </div>
+        <div class="yapilis">
+          <h3>Yapılışı</h3>
+          <ol>
+            <li>
+              Un, ılık su, tuz, sıvı yağ, ılık süt, Yuva Ekşi Maya ve Yuva Kolay
+              Hamur'u karıştırın. Homojen, yumuşak bir hamur elde edene kadar
+              yoğurun.
+            </li>
+            <li>
+              Un, ılık su, tuz, sıvı yağ, ılık süt, Yuva Ekşi Maya ve Yuva Kolay
+              Hamur'u karıştırın. Homojen, yumuşak bir hamur elde edene kadar
+              yoğurun.
+            </li>
+            <li>
+              Un, ılık su, tuz, sıvı yağ, ılık süt, Yuva Ekşi Maya ve Yuva Kolay
+              Hamur'u karıştırın. Homojen, yumuşak bir hamur elde edene kadar
+              yoğurun.
+            </li>
+            <li>
+              Un, ılık su, tuz, sıvı yağ, ılık süt, Yuva Ekşi Maya ve Yuva Kolay
+              Hamur'u karıştırın. Homojen, yumuşak bir hamur elde edene kadar
+              yoğurun.
+            </li>
+            <li>
+              Un, ılık su, tuz, sıvı yağ, ılık süt, Yuva Ekşi Maya ve Yuva Kolay
+              Hamur'u karıştırın. Homojen, yumuşak bir hamur elde edene kadar
+              yoğurun.
+            </li>
+            <li>
+              Un, ılık su, tuz, sıvı yağ, ılık süt, Yuva Ekşi Maya ve Yuva Kolay
+              Hamur'u karıştırın. Homojen, yumuşak bir hamur elde edene kadar
+              yoğurun.
+            </li>
+          </ol>
+        </div>
       </div>
       <div class="comments-container">
         <div
