@@ -56,7 +56,7 @@
         color: #333;
         background-color: #fff;
         position: relative;
-        margin: 44px 0px 0px 0px;
+        margin: 0px;
         padding: 0px 0px 50px 0px;
         box-sizing: border-box;
         min-height: 100vh;
@@ -71,9 +71,9 @@
       }
 
       :is(#yuvamayalp) h1 {
-        font-size: 24px;
+        font-size: 27px;
         font-weight: 700;
-        margin-block: 40px;
+        margin-bottom: 40px;
         color: var(--lp-red);
       }
       /*       :is(#yuvamayalp) h1::before {
@@ -91,6 +91,10 @@
         width: 1em;
         margin-left: 4px;
       } */
+
+      :is(#yuvamayalp) .aciklama p {
+        text-align: justify;
+      }
 
       :is(#yuvamayalp) h4 {
         font-weight: 700;
@@ -115,45 +119,44 @@
 
       .tarif {
         display: grid;
-        grid-template-columns: 1.5fr 1fr 1fr;
+        grid-template-columns: 1.7fr 4fr;
         grid-gap: 15px;
       }
-
-      .yapilis,
-      .malzemeler {
+      .tarif > div {
         border-radius: 10px;
         border: 1px solid var(--lp-red);
         text-align: center;
         padding: 20px;
       }
 
-      .malzemeler {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 15px;
-      }
-
-      .kullanim ul {
+      .tarif ul {
         list-style: none;
         padding: 0;
         margin: 0;
         text-align: left;
       }
 
+      .reklamlar {
+        background-color: gray;
+        min-height: 300px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
       @media (max-width: 768px) {
-        .kullanim {
+        .tarif {
           grid-template-columns: 1fr;
         }
 
-        .kullanim ul {
+        .tarif ul {
           text-align: center;
         }
       }
 
-      .kullanim ul li {
+      .tarif ul li {
         padding: 5px 0;
         color: black;
-        font-weight: 600;
+        font-weight: 500;
         border-bottom: 1px dashed black;
       }
 
@@ -161,7 +164,7 @@
         background: rgb(230, 230, 230);
       } */
 
-      .kullanim ul li::before {
+      .tarif ul li::before {
         content: "›";
         color: black;
         display: inline-block;
@@ -169,7 +172,7 @@
         margin-left: 4px;
       }
 
-      .kullanim {
+      .malzemeler {
         color: black;
         background-image: url("https://www.transparenttextures.com/patterns/subtle-carbon.png");
       }
@@ -195,7 +198,7 @@
 
       .yapilis li {
         padding: 5px 0;
-        font-weight: 600;
+        font-weight: 500;
         border-bottom: 2px solid rgb(201, 201, 201);
         list-style: decimal;
         margin: 10px;
@@ -248,15 +251,20 @@
         padding-left: 15px;
         margin-right: auto;
         margin-left: auto;
-        max-width: 1070px;
+        max-width: 1250px;
       }
 
+      :is(#yuvamayalp) .hero-section {
+        grid-template-columns: 3.2fr 1fr;
+        grid-gap: 15px;
+        position: relative;
+      }
       :is(#yuvamayalp) .lpimg {
         width: 100%;
       }
       :is(#yuvamayalp) .hero-section__description {
         display: grid;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 1.5fr 4fr;
       }
       :is(#yuvamayalp) .icon-ici {
         display: flex;
@@ -325,35 +333,25 @@
         background-image: url("https://www.transparenttextures.com/patterns/wavecut.png");
       }
 
-      .tarif-section {
+      :is(#yuvamayalp) .aciklama {
         display: grid;
-        grid-template-columns: 2.5fr 1fr;
-        margin-top: 30px;
-        margin-bottom: 30px;
+        grid-template-columns: 2fr 1fr;
+        grid-gap: 10px;
       }
-
       @media screen and (max-width: 768px) {
         :is(#yuvamayalp) .hero-section {
-          grid-template-columns: 1fr;
-        }
-
-        .tarif-section {
-          display: grid;
           grid-template-columns: 1fr;
         }
         :is(#yuvamayalp) .hero-section__description {
           grid-template-columns: 1fr;
         }
-
-        .malzemeler {
+        :is(#yuvamayalp) .aciklama {
           grid-template-columns: 1fr;
         }
+
         :is(#yuvamayalp) .kolay-hamur {
           max-width: 150px;
           margin-inline: auto;
-        }
-        :is(#yuvamayalp) h1 {
-          text-align: center;
         }
 
         .reklam-banner {
@@ -456,9 +454,9 @@
       }
 
       :is(#yuvamayalp) .kullanim {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-gap: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       :is(#yuvamayalp) .mobile-icons {
@@ -472,15 +470,6 @@
         text-align: center;
         margin-top: 10px;
         font-weight: 700;
-      }
-
-      .reklam-section {
-        background: rgb(122, 17, 17);
-        margin: 10px 5px 10px 5px;
-        color: white;
-        display: grid;
-        place-content: center;
-        min-height: 300px;
       }
     </style>
     <script>
@@ -534,52 +523,50 @@
             alt="kolay hamur pakedi"
             style="margin-top: -9vw; max-width: 80%; margin-inline: auto"
           />
-          <div class="icerik">
-            <h1
-              class="hero-header"
-              style="
-                color: var(--lp-red);
-                margin: 0;
-                font-family: 'LpFontBold', Arial, Helvetica, sans-serif;
-              "
-            >
-              Yuva Kolay Hamur ile Ramazan Pidesi Tarifi
-            </h1>
-
-            <div class="kullanim">
-              <div class="malzemeler">
-                <div>
-                  <h3>Malzemeler</h3>
-
-                  <ul>
-                    <li>4.5 su bardağı un / 500 gr</li>
-                    <li>2.5 su bardağı su / 250 gr</li>
-                    <li>1 tatlı kaşığı tuz / 10 gr</li>
-                    <li>0.5 çay bardağı sıvı yağ / 10 gr</li>
-                    <li>1 çay bardağı süt / 100 gr</li>
-                    <li>1 paket Yuva Ekşi Maya</li>
-                    <li>1 paket Yuva Kolay Hamur Aç / 35 gr</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h4 style="margin-top: 0px">Üstü için</h4>
-                  <ul>
-                    <li>2 yemek kaşığı çörekotu / 20gr</li>
-                  </ul>
-                  <h4>Bulamaç için</h4>
-                  <ul>
-                    <li>1 adet yumurta sarısı</li>
-                    <li>2 yemek kaşığı yoğurt / 20 gr</li>
-                    <li>3 yemek kaşığı sıvı yağ / 30 gr</li>
-                  </ul>
-                </div>
-              </div>
+          <div class="aciklama">
+            <div class="hero-aciklama">
+              <h1>Yuva Kolay Hamur ile Ramazan Pidesi Tarifi</h1>
+              <p>
+                Yuva Kolay Hamur ile ister mayalı ister mayasız tüm hamur işi
+                tariflerinizi çok daha pratik ve daha kısa sürede hazırlayın!
+                Yuva Kolay Hamur sayesinde hamurunuzun yoğurma ve dinlenme
+                süresi kısa olur. Hamurunuz yırtılmadan kolayca açılıp, çabucak
+                hazır olur.
+              </p>
             </div>
+            <div class="reklamlar"></div>
           </div>
         </div>
       </div>
-      <div class="tarif-section">
+      <div class="tarif">
+        <div class="malzemeler">
+          <div>
+            <h3>Malzemeler</h3>
+            <ul>
+              <li>4.5 su bardağı un / 500 gr</li>
+              <li>2.5 su bardağı su / 250 gr</li>
+              <li>1 tatlı kaşığı tuz / 10 gr</li>
+              <li>0.5 çay bardağı sıvı yağ / 10 gr</li>
+              <li>1 çay bardağı süt / 100 gr</li>
+              <li>1 paket Yuva Ekşi Maya</li>
+              <li>1 paket Yuva Kolay Hamur Aç / 35 gr</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Bulamaç için</h4>
+            <ul>
+              <li>1 adet yumurta sarısı</li>
+              <li>2 yemek kaşığı yoğurt / 20 gr</li>
+              <li>3 yemek kaşığı sıvı yağ / 30 gr</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Üstü için</h4>
+            <ul>
+              <li>2 yemek kaşığı çörekotu / 20gr</li>
+            </ul>
+          </div>
+        </div>
         <div class="yapilis">
           <h3>Yapılışı</h3>
           <ol>
@@ -611,9 +598,6 @@
           </ol>
           <p class="not">Not : Ölçüler silme ölçülerdir.</p>
         </div>
-        <div class="reklam-section">
-          <p>Reklam Banner</p>
-        </div>
       </div>
 
       <div class="comments-container" style="display: none">
@@ -633,8 +617,5 @@
         ></div>
       </div>
     </div>
-    <a href="#" class="reklam-banner">
-      👉 Çekilişe Katıl: Tarifini paylaş, market çeki kazan! 👈
-    </a>
   </body>
 </html>
