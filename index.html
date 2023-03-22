@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yuva Kolay Hamur</title>
+    <style>
+      :root {
+        --lp-red: #cc0000;
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--lp-red);
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      @font-face {
+        font-family: "LpFont";
+        src: url(SourceSansVariable-Roman.otf);
+      }
+      @font-face {
+        font-family: "LpFontItalic";
+        src: url(SourceSansVariable-Italic.otf);
+      }
+      @font-face {
+        font-family: "LpFontBold";
+        src: url(SourceSansPro-Bold.otf);
+      }
+
+      body {
+        font-family: "LpFont", sans-serif;
+        color: #333;
+        background-color: #fff;
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        min-height: 100vh;
+      }
+      :is(#yuvamayalp) p {
+        font-size: 17px;
+        font-weight: 500;
+      }
+
+      :is(#yuvamayalp) h1 {
+        font-size: 3vw;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: var(--lp-red);
+        text-align: center;
+      }
+
+      .comments-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .malzemeler {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: lightgray;
+        padding: 2vw;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      .malzemeler > ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .malzemeler > ul > li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+
+      :is(#yuvamayalp) h2 {
+        font-size: 2vw;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: var(--lp-red);
+        text-align: center;
+      }
+
+      :is(#yuvamayalp) .logo {
+        width: 60px;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        margin-inline: auto;
+        display: block;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        display: none !important;
+      }
+
+      :is(#yuvamayalp) .hero-image {
+        width: 100%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        max-height: 100%;
+        display: block;
+        margin-bottom: 90px;
+      }
+      :is(#yuvamayalp) .lpcontainer {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 1920px;
+      }
+
+      :is(#yuvamayalp) .lpcontentcontainer {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 1250px;
+      }
+
+      :is(#yuvamayalp) .hero-section {
+        grid-template-columns: 3.2fr 1fr;
+        grid-gap: 15px;
+        position: relative;
+      }
+      :is(#yuvamayalp) .lpimg {
+        width: 100%;
+      }
+      :is(#yuvamayalp) .hero-section__description {
+        display: grid;
+        grid-template-columns: 1.5fr 4fr;
+      }
+      :is(#yuvamayalp) .icon-ici {
+        display: flex;
+        align-items: center;
+      }
+
+      :is(#yuvamayalp) .iconlar {
+        display: flex;
+        column-gap: 10px;
+      }
+      :is(#yuvamayalp) .kampanya-gorsel {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        margin-inline: auto;
+        display: block;
+      }
+
+      :is(#yuvamayalp) .kampanya-gorsel-mobil {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        margin-inline: auto;
+        display: block;
+      }
+
+      :is(#yuvamayalp) .bordered-desc {
+        border: 4px var(--lp-red) solid;
+        border-radius: 10px;
+        font-style: italic;
+        padding: 5px 10px;
+        font-size: 18px;
+        text-align: center;
+        font-weight: bolder;
+        color: var(--lp-red);
+      }
+
+      :is(#yuvamayalp) .video-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 10px;
+        margin-bottom: 40px;
+      }
+
+      :is(#yuvamayalp) .video-grid iframe,
+      :is(#yuvamayalp) .video-section iframe {
+        border: 4px solid var(--lp-red);
+        box-shadow: 0px 5px 20px 3px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+      }
+
+      @media screen and (max-width: 768px) {
+        :is(#yuvamayalp) .hero-section {
+          grid-template-columns: 1fr;
+        }
+        :is(#yuvamayalp) .hero-section__description {
+          grid-template-columns: 1fr;
+        }
+        :is(#yuvamayalp) .kolay-hamur {
+          max-width: 150px;
+          margin-inline: auto;
+        }
+
+        :is(#yuvamayalp) .kampanya-gorsel {
+          width: 100%;
+          max-width: 260px;
+          margin-inline: auto;
+        }
+
+        :is(#yuvamayalp) .icon-ici {
+          display: flex;
+          align-items: center;
+          text-align: center;
+        }
+        :is(#yuvamayalp) .desktop-only {
+          display: none !important;
+        }
+
+        :is(#yuvamayalp) .iconlar {
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+
+        :is(#yuvamayalp) .hero-image {
+          margin-top: 0px;
+          margin-bottom: 30px;
+          margin-top: -4vw;
+        }
+
+        :is(#yuvamayalp) .mobil-justify {
+          text-align: justify;
+        }
+        :is(#yuvamayalp) .kullanim {
+          flex-direction: column;
+        }
+
+        :is(#yuvamayalp) .lpcontainer {
+          padding-right: 0px;
+          padding-left: 0px;
+        }
+
+        :is(#yuvamayalp) .lp-flex {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        :is(#yuvamayalp) .kullanim__desc {
+          column-gap: 4vw;
+        }
+
+        :is(#yuvamayalp) .icon-ici-mobil.mobile-only {
+          flex-direction: row;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          column-gap: 1vh;
+        }
+        :is(#yuvamayalp) p {
+          font-size: 3.5vw;
+          font-weight: 500;
+        }
+      }
+
+      @media screen and (min-width: 768px) {
+        :is(#yuvamayalp) .iconlar {
+          display: flex;
+          justify-content: space-between;
+          padding-inline: 20px;
+        }
+        :is(#yuvamayalp) .bordered-desc {
+          width: 100%;
+        }
+        :is(#yuvamayalp) .mobile-only {
+          display: none !important;
+        }
+        :is(#yuvamayalp) .kullanim {
+          padding-right: 20px;
+          column-gap: 3px;
+        }
+
+        :is(#yuvamayalp) .hero-section__description {
+          grid-gap: 20px;
+        }
+
+        :is(#yuvamayalp) .video-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-gap: 40px;
+          margin-bottom: 40px;
+        }
+      }
+
+      :is(#yuvamayalp) .cta-button:hover {
+        transform: scale(0.95);
+        transition: all;
+        transition-duration: 500ms;
+      }
+
+      :is(#yuvamayalp) .kullanim {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      :is(#yuvamayalp) .mobile-icons {
+        display: flex;
+        justify-content: center;
+        column-gap: 2px;
+      }
+    </style>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-WS75JTH");
+    </script>
+  </head>
+  <body id="yuvamayalp">
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-WS75JTH"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <img class="logo desktop-only" src="logo-yuva.png" alt="yuvamaya logo" />
+    <div class="lpcontainer">
+      <img
+        class="hero-image desktop-only"
+        src="hero-yuva-desktop.gif"
+        alt="Yuvamaya Hero Görseli"
+      />
+      <img
+        class="hero-image mobile-only"
+        src="hero-yuva-mobile.gif"
+        alt="Yuvamaya Hero Görseli"
+      />
+    </div>
+    <div id="fb-root"></div>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/tr_TR/sdk.js#xfbml=1&version=v16.0&appId=615904549035271&autoLogAppEvents=1"
+      nonce="N1RkHSsU"
+    ></script>
+    <div class="lpcontentcontainer">
+      <h1>KOLAY HAMUR'LA RAMAZAN PİDESİ TARİFİ</h1>
+      <div class="malzemeler">
+        <h2>Malzemeler</h2>
+        <ul>
+          <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum,
+            itaque!
+          </li>
+          <li>
+            Suscipit, amet illum alias nihil consequatur minima velit magnam
+            iure.
+          </li>
+          <li>
+            Minima molestias porro aperiam nemo eos nostrum laboriosam? Rerum,
+            id!
+          </li>
+          <li>
+            Nulla aspernatur quibusdam blanditiis asperiores eos alias corporis
+            eligendi suscipit?
+          </li>
+          <li>
+            Ipsum nisi dolorem repellendus qui? Tempora aliquam asperiores
+            itaque cum.
+          </li>
+        </ul>
+        <h3>Üstü için</h3>
+        <ul>
+          <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum,
+            itaque!
+          </li>
+          <li>
+            Suscipit, amet illum alias nihil consequatur minima velit magnam
+            iure.
+          </li>
+          <li>
+            Minima molestias porro aperiam nemo eos nostrum laboriosam? Rerum,
+            id!
+          </li>
+          <li>
+            Nulla aspernatur quibusdam blanditiis asperiores eos alias corporis
+            eligendi suscipit?
+          </li>
+          <li>
+            Ipsum nisi dolorem repellendus qui? Tempora aliquam asperiores
+            itaque cum.
+          </li>
+        </ul>
+      </div>
+      <div class="comments-container">
+        <div
+          class="fb-comments"
+          data-href="https://yuvamaya.com.tr/kolay-hamur/ramazan-pidesi"
+          data-width="400"
+          data-numposts="10"
+        ></div>
+      </div>
+    </div>
+  </body>
+</html>
