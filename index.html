@@ -132,14 +132,6 @@
         text-align: left;
       }
 
-      .reklamlar {
-        background-color: gray;
-        min-height: 300px;
-        border-radius: 10px;
-        margin-bottom: 20px;
-        display: none;
-      }
-
       @media (max-width: 768px) {
         .tarif {
           grid-template-columns: 1fr;
@@ -261,7 +253,7 @@
       }
       :is(#yuvamayalp) .hero-section__description {
         display: grid;
-        grid-template-columns: 1.5fr 4fr;
+        grid-template-columns: 1.3fr 4fr;
       }
       :is(#yuvamayalp) .icon-ici {
         display: flex;
@@ -316,26 +308,21 @@
         margin-top: 50px;
       }
 
-      .reklam-banner {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: var(--lp-red);
-        text-align: center;
-        color: white;
-        padding-block: 10px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: large;
-        background-image: url("wavecut.png");
-      }
-
       :is(#yuvamayalp) .aciklama {
         display: grid;
-        grid-template-columns: 12.3fr 1fr;
+        grid-template-columns: 1.75fr 1fr;
         grid-gap: 40px;
         margin-bottom: 10px;
+      }
+
+      .reklam {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+
+      .reklam:hover {
+        opacity: 0.8;
       }
 
       @media screen and (max-width: 768px) {
@@ -355,10 +342,6 @@
         :is(#yuvamayalp) .kolay-hamur {
           max-width: 150px;
           margin-inline: auto;
-        }
-
-        .reklam-banner {
-          font-size: 12px;
         }
 
         :is(#yuvamayalp) .kampanya-gorsel {
@@ -564,7 +547,15 @@
                 Mayalı hamur işleri yapımında ilave maya eklenmelidir.
               </p>
             </div>
-            <div class="reklamlar"></div>
+            <div class="reklamlar">
+              <a href="http://">
+                <img
+                  class="reklam"
+                  src="cekilis-postu.jpg"
+                  alt="Çekiliş Instagram Postu Görseli"
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>
